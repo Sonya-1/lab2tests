@@ -40,3 +40,8 @@ TEST(strstrTest, null1Test) {
 	char str[256] = "\0", sub[256] = "rainbow\0";
 	EXPECT_EQ(strstr(str, sub, 0, 7), -1);
 }
+
+TEST(strstrTest, shortTest) {
+	char str[256] = "rain\0", sub[256] = "rainbow\0";
+	EXPECT_EQ(strstr(str, sub, 4, 7), -1);
+}
